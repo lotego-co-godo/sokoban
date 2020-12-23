@@ -1,0 +1,32 @@
+{
+  "name": "sokoban",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "ISC",
+  "scripts": {
+    "build": "babel src --out-dir build",
+    "test": "jest",
+    "postinstall": "husky install",
+    "prettify": "prettier . --write",
+    "prettier:check": "prettier . --check",
+    "lint": "eslint . --ext .js,.jsx",
+    "lint:fix": "npm run lint --fix"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/preset-env": "^7.12.11",
+    "eslint": "^7.16.0",
+    "eslint-config-prettier": "^7.1.0",
+    "husky": "^5.0.6",
+    "jest": "^26.6.3",
+    "lint-staged": "^10.5.3",
+    "prettier": "^2.2.1",
+    "pretty-quick": "^3.1.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": "eslint"
+  }
+}
