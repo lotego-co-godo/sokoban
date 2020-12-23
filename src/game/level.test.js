@@ -16,7 +16,7 @@ describe('Level', () => {
     it('should be a list of boxes created from positions provided in constructor', () => {
       const boxPositions = [new Vector2(1, 2), new Vector2(2, 2)];
       const level = new Level([], boxPositions, new Vector2(2, 3));
-      expect(level.boxes.map((box) => box.position)).toEqual(
+      expect(level.boxes.map((box) => box.position)).toStrictEqual(
         expect.arrayContaining(expect.arrayContaining(boxPositions))
       );
     });
@@ -26,7 +26,7 @@ describe('Level', () => {
     it('should be a player created from position provided in constructor', () => {
       const level = new Level([], [], new Vector2(2, 3));
 
-      expect(level.player.position).toEqual(new Vector2(2, 3));
+      expect(level.player.position).toStrictEqual(new Vector2(2, 3));
     });
   });
 
@@ -35,7 +35,7 @@ describe('Level', () => {
       const tiles = [new Tile('wall', new Vector2(1, 1)), new Tile('wall', new Vector2(2, 1))];
       const level = new Level(tiles, [], new Vector2(2, 3));
 
-      expect(level.getTileAt(new Vector2(2, 1))).toEqual(new Tile('wall', new Vector2(2, 1)));
+      expect(level.getTileAt(new Vector2(2, 1))).toStrictEqual(new Tile('wall', new Vector2(2, 1)));
     });
   });
 
@@ -46,8 +46,8 @@ describe('Level', () => {
       level.player.position = new Vector2(4, 8);
       level.reset();
 
-      expect(level.boxes[0].position).toEqual(new Vector2(1, 1));
-      expect(level.player.position).toEqual(new Vector2(2, 3));
+      expect(level.boxes[0].position).toStrictEqual(new Vector2(1, 1));
+      expect(level.player.position).toStrictEqual(new Vector2(2, 3));
     });
   });
 

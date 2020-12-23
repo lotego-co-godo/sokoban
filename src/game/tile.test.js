@@ -14,7 +14,7 @@ describe('Tile', () => {
     it('should be the same as provided in constructor', () => {
       const tile = new Tile('wall', new Vector2(2, 1));
 
-      expect(tile.position).toEqual(new Vector2(2, 1));
+      expect(tile.position).toStrictEqual(new Vector2(2, 1));
     });
   });
 });

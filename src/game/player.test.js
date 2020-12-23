@@ -9,7 +9,7 @@ describe('Player', () => {
       const level = new Level([], [], new Vector2(1, 1));
       const player = new Player(new Vector2(1, 1), level);
 
-      expect(player.position).toEqual(new Vector2(1, 1));
+      expect(player.position).toStrictEqual(new Vector2(1, 1));
     });
   });
 
@@ -24,7 +24,7 @@ describe('Player', () => {
 
       player.move('up');
 
-      expect(player.position).toEqual(new Vector2(1, 1));
+      expect(player.position).toStrictEqual(new Vector2(1, 1));
     });
 
     it('should move player down when possible', () => {
@@ -37,7 +37,7 @@ describe('Player', () => {
 
       player.move('down');
 
-      expect(player.position).toEqual(new Vector2(1, 2));
+      expect(player.position).toStrictEqual(new Vector2(1, 2));
     });
 
     it('should move player left when possible', () => {
@@ -50,7 +50,7 @@ describe('Player', () => {
 
       player.move('left');
 
-      expect(player.position).toEqual(new Vector2(1, 1));
+      expect(player.position).toStrictEqual(new Vector2(1, 1));
     });
 
     it('should move player right when possible', () => {
@@ -63,7 +63,7 @@ describe('Player', () => {
 
       player.move('right');
 
-      expect(player.position).toEqual(new Vector2(2, 1));
+      expect(player.position).toStrictEqual(new Vector2(2, 1));
     });
 
     it('should not move player when there is a wall in selected direction', () => {
@@ -76,7 +76,7 @@ describe('Player', () => {
 
       player.move('right');
 
-      expect(player.position).toEqual(new Vector2(1, 1));
+      expect(player.position).toStrictEqual(new Vector2(1, 1));
     });
 
     it('should push a box if walking into it', () => {
@@ -93,7 +93,7 @@ describe('Player', () => {
 
       player.move('right');
 
-      expect(level.boxes[0].position).toEqual(new Vector2(3, 1));
+      expect(level.boxes[0].position).toStrictEqual(new Vector2(3, 1));
     });
 
     it('should not move player if there is more than one box in a selected direction', () => {
@@ -111,7 +111,7 @@ describe('Player', () => {
 
       player.move('right');
 
-      expect(player.position).toEqual(new Vector2(1, 1));
+      expect(player.position).toStrictEqual(new Vector2(1, 1));
     });
 
     it('should not move player if there is a wall next to a box in a selected direction', () => {
@@ -128,8 +128,8 @@ describe('Player', () => {
 
       player.move('right');
 
-      expect(player.position).toEqual(new Vector2(1, 1));
-      expect(level.boxes[0].position).toEqual(new Vector2(2, 1));
+      expect(player.position).toStrictEqual(new Vector2(1, 1));
+      expect(level.boxes[0].position).toStrictEqual(new Vector2(2, 1));
     });
   });
 });
