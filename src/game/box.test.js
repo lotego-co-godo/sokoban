@@ -9,7 +9,7 @@ describe('Box', () => {
       const level = new Level([], [], new Vector2(1, 1));
       const box = new Box(new Vector2(1, 2), level);
 
-      expect(box.position).toBe(new Vector2(1, 2));
+      expect(box.position).toEqual(new Vector2(1, 2));
     });
   });
 
