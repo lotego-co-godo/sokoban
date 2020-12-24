@@ -20,7 +20,7 @@ describe('Vector2', () => {
       const vector1 = new Vector2(5, 9);
       const vector2 = new Vector2(-10, 5);
 
-      expect(vector1.add(vector2)).toStrictEqual({ x: -5, y: 14 });
+      expect(vector1.add(vector2)).toEqual({ x: -5, y: 14 });
     });
   });
 
