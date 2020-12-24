@@ -6,5 +6,8 @@ export class Tile {
 
   position;
 
-  constructor(type, position) {}
+  constructor(type, position) {
+    this.type = type;
+    this.position = position;
+  }
 }
