@@ -8,7 +8,7 @@ describe('Level', () => {
       const tiles = [new Tile('wall', new Vector2(1, 1)), new Tile('wall', new Vector2(2, 1))];
       const level = new Level(tiles, [], new Vector2(2, 3));
 
-      expect(level.tiles).toBe(expect.arrayContaining(tiles));
+      expect(level.tiles).toEqual(tiles);
     });
   });
 
@@ -16,9 +16,7 @@ describe('Level', () => {
     it('should be a list of boxes created from positions provided in constructor', () => {
       const boxPositions = [new Vector2(1, 2), new Vector2(2, 2)];
       const level = new Level([], boxPositions, new Vector2(2, 3));
-      expect(level.boxes.map((box) => box.position)).toEqual(
-        expect.arrayContaining(expect.arrayContaining(boxPositions))
-      );
+      expect(level.boxes.map((box) => box.position)).toEqual(boxPositions);
     });
   });
 
